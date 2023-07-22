@@ -1,0 +1,57 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: lighter;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #00AAFF, #00FF6C);
+}
+
+.Calculator{
+    display: grid;
+    justify-content: center;
+    align-content: center; /*align-content instead of align-items. To align everything to the center*/
+    min-height: 100vh; /*This sets height of the div to 100% at all times*/
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.Calculator>button{
+    font-size: 3rem;
+    outline: none;
+    background-color:rgba(255, 255, 255, 0.75);
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.Calculator>button:hover{
+    background-color: white;
+}
+.twoBtns{
+    grid-column: span 2; /*increases the  span times 2*/
+}
+.output{
+    grid-column: 1 / -1; /* Column 1 to column -1 which is the last colum
+                            This will stand the entire width of the row*/
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 1em;
+    word-wrap: break-word; /*This will allow the word to break in the middle of it. Not @ the end of word or @ space*/
+    word-break: break-all; /*Breaks al the word if it grows too long*/
+}
+
+.output .prev-operand{
+    font-size: 1.5em;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.output .current-operand{
+    font-size: 2.5em;
+    color: rgba(255, 255, 255, 0.75);
+}
